@@ -20,28 +20,68 @@ public class EntidadAlumnos implements Serializable {
     private String Nacimiento;
 
 
-    private int getId() {
+    public int getId() {
         return this.Id;
     }
 
-    private void setId(int Id) {
+    public void setId(int Id) {
         this.Id = Id;
     }
 
-    private String getNombre() {
+    public String getNombre() {
         return this.Nombre;
     }
 
-    private void setNombre(String Nombre) {
+    public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
 
-    private String getDireccion() {
+    public String getDireccion() {
         return this.Direccion;
     }
 
-    private void setDire(String Direccion) {
+    public void setDireccion(String Direccion) {
         this.Direccion = Direccion;
+    }
+
+    public int getTelefono() {
+        return this.Telefono;
+    }
+
+    public void setTelefono(int Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getSexo() {
+        return this.Sexo;
+    }
+
+    public void setSexo(String Sexo) {
+        this.Sexo = Sexo;
+    }
+
+    public String getCarrera() {
+        return this.Carrera;
+    }
+
+    public void setCarrera(String Carrera) {
+        this.Carrera = Carrera;
+    }
+
+    public String getCorreo() {
+        return this.Correo;
+    }
+
+    public void setCorreo(String Correo) {
+        this.Correo = Correo;
+    }
+
+    public String getNacimiento() {
+        return this.Nacimiento;
+    }
+
+    public void setNacimiento(String Nacimiento) {
+        this.Nacimiento = Nacimiento;
     }
 }

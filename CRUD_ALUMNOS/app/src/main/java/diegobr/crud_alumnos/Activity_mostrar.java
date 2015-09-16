@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -13,18 +15,23 @@ import java.util.ArrayList;
 
 public class Activity_mostrar extends AppCompatActivity {
 
+    private EditText etNombre;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_mostrar);
+        etNombre =(EditText) findViewById(R.id.textNombre);
 
+    }
 
+    public void OnClick(View V){
+        EntidadAlumnos objEnt=new EntidadAlumnos();
+        objEnt.setNombre(etNombre.getText().toString());
 
-
-
-
-
-
+        conAlumno objAlumno =new conAlumno(this);
+        objAlumno.insertarAlumno(objEnt);
 
     }
 
