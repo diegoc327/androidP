@@ -34,7 +34,6 @@ import android.widget.TimePicker;
 public class AgregarAlumnos extends ActionBarActivity {
 
     private Button mDateButton;
-    private Button mTimeButton;
     public Calendar mCalendar;
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String TIME_FORMAT = "kk:mm";
@@ -96,21 +95,13 @@ public class AgregarAlumnos extends ActionBarActivity {
 
     }
 
-    public void showTimePickerDialog(View v) {
-        timeFragment = new TimePickerFragment();
-        timeFragment.show(getFragmentManager(), "timePicker");
-    }
 
     public void updateDateButtonText() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_FORMAT);
         String dateForButton = dateFormat.format(mCalendar.getTime());
         mDateButton.setText(dateForButton);
     }
-    private void updateTimeButtonText() {
-        SimpleDateFormat timeFormat = new SimpleDateFormat(TIME_FORMAT);
-        String timeForButton = timeFormat.format(mCalendar.getTime());
-        mTimeButton.setText(timeForButton);
-    }
+
 
     class DatePickerFragment extends DialogFragment implements
             DatePickerDialog.OnDateSetListener {
@@ -134,30 +125,6 @@ public class AgregarAlumnos extends ActionBarActivity {
             updateDateButtonText();
         }
     }
-
-    public class TimePickerFragment extends DialogFragment implements
-            TimePickerDialog.OnTimeSetListener {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            // Use the current time as the default values for the picker
-            final Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            int minute = c.get(Calendar.MINUTE);
-
-            // Create a new instance of TimePickerDialog and return it
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
-        }
-
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            mCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-            mCalendar.set(Calendar.MINUTE, minute);
-            updateTimeButtonText();
-        }
-    }
-
-
 
 
 

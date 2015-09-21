@@ -2,20 +2,32 @@ package diegobr.crud_alumnos;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import java.security.PrivateKey;
 import java.util.ArrayList;
 
 public class Activity_mostrar extends AppCompatActivity {
 
     private EditText etNombre;
+    private EditText etControl;
+    private EditText etTelefono;
+    private EditText etDireccion;
+    private Spinner etSexo;
+    private Spinner etCarrera;
+    private EditText etEmail;
+    private Button etNacimiento;
+    private Button btnGuardar;
 
 
     @Override
@@ -23,6 +35,14 @@ public class Activity_mostrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_mostrar);
         etNombre =(EditText) findViewById(R.id.textNombre);
+        etControl =(EditText) findViewById(R.id.textControl);
+        etTelefono=(EditText) findViewById(R.id.textTelefono);
+        etDireccion=(EditText) findViewById(R.id.textDireccion);
+        etSexo=(Spinner) findViewById(R.id.spinnerSexo);
+        etCarrera=(Spinner) findViewById(R.id.spinnerCarrera);
+        etEmail=(EditText) findViewById(R.id.textEmail);
+        etNacimiento=(Button) findViewById(R.id.reminder_date);
+        btnGuardar =(Button) findViewById(R.id.btnGuardar);
 
     }
 
@@ -33,7 +53,13 @@ public class Activity_mostrar extends AppCompatActivity {
         conAlumno objAlumno =new conAlumno(this);
         objAlumno.insertarAlumno(objEnt);
 
+
+
     }
+
+
+
+
 
 
 
