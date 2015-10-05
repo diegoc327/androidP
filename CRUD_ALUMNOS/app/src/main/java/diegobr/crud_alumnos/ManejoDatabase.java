@@ -25,7 +25,7 @@ public class ManejoDatabase extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db){
         Log.i("System.out","Voy aca----->");
         db.execSQL("CREATE TABLE alumno(codigo INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, numero TEXT," +
-                   " nombre TEXT, direccion TEXT, telefono INT, sexo TEXT carrera TEXT, nacimiento TEXT);");
+                   " nombre TEXT, direccion TEXT, telefono INT, sexo TEXT, carrera TEXT, nacimiento TEXT);");
 
     }
     @Override

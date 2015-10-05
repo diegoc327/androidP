@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.text.SimpleDateFormat;
@@ -40,6 +41,17 @@ public class AgregarAlumnos extends ActionBarActivity {
     DialogFragment dateFragment;
     DialogFragment timeFragment;
 
+    private EditText etNombre;
+    private EditText etControl;
+    private EditText etTelefono;
+    private EditText etDireccion;
+    private Spinner etSexo;
+    private Spinner etCarrera;
+    private EditText etEmail;
+    private Button etNacimiento;
+    private Button btnGuardar;
+
+
 
 
 
@@ -48,6 +60,37 @@ public class AgregarAlumnos extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_alumnos);
+
+
+        etNombre =(EditText) findViewById(R.id.textNombre);
+        etControl =(EditText) findViewById(R.id.textControl);
+        etTelefono=(EditText) findViewById(R.id.textTelefono);
+        etDireccion=(EditText) findViewById(R.id.textDireccion);
+        etSexo=(Spinner) findViewById(R.id.spinnerSexo);
+        etCarrera=(Spinner) findViewById(R.id.spinnerCarrera);
+        etEmail=(EditText) findViewById(R.id.textEmail);
+        etNacimiento=(Button) findViewById(R.id.reminder_date);
+        btnGuardar =(Button) findViewById(R.id.btnGuardar);
+        btnGuardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    EntidadAlumnos objEnt=new EntidadAlumnos();
+                    objEnt.setNombre(etNombre.getText().toString());
+                    objEnt.setId(Integer.parseInt(etControl.getText().toString()));
+                    objEnt.setCarrera(etCarrera.getSelectedItem().toString());
+                    objEnt.setCorreo(etEmail.getText().toString());
+                    objEnt.setDireccion(etDireccion.getText().toString());
+                    objEnt.setSexo(etSexo.getSelectedItem().toString());
+                    objEnt.setTelefono(Integer.parseInt(etTelefono.getText().toString()));
+
+
+                    conAlumno objAlumno =new conAlumno(getBaseContext());
+                    objAlumno.insertarAlumno(objEnt);
+
+            }
+        });
+
+
 
 
         mDateButton = (Button) findViewById(R.id.reminder_date);
