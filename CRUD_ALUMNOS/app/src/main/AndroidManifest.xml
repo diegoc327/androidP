@@ -20,6 +20,11 @@
             android:name=".Activity_mostrar"
             android:label="@string/title_activity_activity_mostrar" >
         </activity>
+        <activity
+            android:name=".FrmConsulta"
+            android:label="@string/title_activity_frm_consulta"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
