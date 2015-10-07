@@ -25,6 +25,7 @@ public class conAlumno {
             cv.put(manejoDB.SEXO,alumno.getSexo());
             cv.put(manejoDB.CARRERA,alumno.getCarrera());
             cv.put(manejoDB.NACIMIENTO,alumno.getNacimiento());
+            //cv.put(manejoDB.)
 
             db.insert("alumno", manejoDB.NOMBRE, cv);
             db.close();
