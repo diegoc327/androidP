@@ -37,10 +37,7 @@ public class AgregarAlumnos extends ActionBarActivity {
     private Button mDateButton;
     public Calendar mCalendar;
     private static final String DATE_FORMAT = "yyyy-MM-dd";
-    private static final String TIME_FORMAT = "kk:mm";
     DialogFragment dateFragment;
-    DialogFragment timeFragment;
-
     private EditText etNombre;
     private EditText etControl;
     private EditText etTelefono;
