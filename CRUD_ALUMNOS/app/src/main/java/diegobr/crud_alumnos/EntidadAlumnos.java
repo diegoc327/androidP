@@ -84,4 +84,8 @@ public class EntidadAlumnos implements Serializable {
     public void setNacimiento(String Nacimiento) {
         this.Nacimiento = Nacimiento;
     }
+    @Override
+    public String toString(){
+        return this.Id+"-"+this.Nombre+"-"+this.Direccion+"-"+this.Telefono+"-"+this.Sexo+"-"+this.Carrera+"-"+this.Nacimiento+"-"+this.Correo;
+    }
 }

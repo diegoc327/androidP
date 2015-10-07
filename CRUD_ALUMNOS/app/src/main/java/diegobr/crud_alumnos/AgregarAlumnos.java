@@ -1,9 +1,11 @@
 package diegobr.crud_alumnos;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -32,7 +34,7 @@ import android.widget.DatePicker;
 import android.widget.TimePicker;
 
 
-public class AgregarAlumnos extends ActionBarActivity {
+public class AgregarAlumnos extends Activity {
 
     private Button mDateButton;
     public Calendar mCalendar;
@@ -83,6 +85,13 @@ public class AgregarAlumnos extends ActionBarActivity {
 
                     conAlumno objAlumno =new conAlumno(getBaseContext());
                     objAlumno.insertarAlumno(objEnt);
+
+
+                Intent i = new Intent(getApplicationContext(), FrmConsulta.class);
+                startActivity(i);
+
+
+
 
             }
         });

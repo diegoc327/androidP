@@ -16,7 +16,7 @@ public class ManejoDatabase extends SQLiteOpenHelper{
     public static final String TELEFONO ="telefono";
     public static final String SEXO = "sexo";
     public static final String CARRERA = "carrera";
-    public static final String NACIMIENTO = "nacimimiento";
+    public static final String NACIMIENTO = "nacimiento";
     public ManejoDatabase(Context context){
         super(context,BASEDATOS,null,1);
 
