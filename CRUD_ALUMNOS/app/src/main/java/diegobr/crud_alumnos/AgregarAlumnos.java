@@ -101,6 +101,7 @@ public class AgregarAlumnos extends Activity {
 
         mDateButton = (Button) findViewById(R.id.reminder_date);
         mCalendar = Calendar.getInstance();
+
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

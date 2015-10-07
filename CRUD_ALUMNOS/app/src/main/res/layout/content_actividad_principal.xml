@@ -12,7 +12,7 @@
     <ImageButton
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:id="@+id/imageButton"
+        android:id="@+id/btnNuevo"
         android:src="@drawable/azul"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -22,17 +22,17 @@
     <ImageButton
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnBuscar"
         android:src="@drawable/fondorojo1"
-        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignTop="@+id/btnNuevo"
         android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/imageButton" />
+        android:layout_alignBottom="@+id/btnNuevo" />
 
     <ImageButton
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:id="@+id/imageButton3"
-        android:src="@drawable/design_snackbar_background"
+        android:id="@+id/btnModificar"
+        android:src="@drawable/amarillo"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false"
@@ -41,10 +41,10 @@
     <ImageButton
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:id="@+id/imageButton4"
-        android:layout_alignTop="@+id/imageButton3"
+        android:id="@+id/btnEliminar"
+        android:layout_alignTop="@+id/btnModificar"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/abc_ic_commit_search_api_mtrl_alpha" />
+        android:src="@drawable/verde" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,9 +52,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nuevo Alumno"
         android:id="@+id/textView3"
-        android:layout_alignTop="@+id/imageButton"
-        android:layout_alignEnd="@+id/imageButton"
-        android:layout_marginTop="65dp" />
+        android:layout_marginTop="53dp"
+        android:layout_alignTop="@+id/btnNuevo"
+        android:layout_alignEnd="@+id/btnNuevo"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,10 +73,10 @@
         android:text="Modificar Alumno"
         android:id="@+id/textView5"
         android:layout_marginTop="46dp"
-        android:layout_alignTop="@+id/imageButton3"
+        android:layout_alignTop="@+id/btnModificar"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/imageButton4"
-        android:layout_alignEnd="@+id/imageButton3" />
+        android:layout_toStartOf="@+id/btnEliminar"
+        android:layout_alignEnd="@+id/btnModificar" />
 
     <TextView
         android:layout_width="wrap_content"

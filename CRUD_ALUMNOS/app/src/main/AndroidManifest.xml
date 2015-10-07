@@ -35,6 +35,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BuscarAlumnos"
+            android:label="@string/title_activity_buscar_alumnos"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".EliminarAlumnos"
+            android:label="@string/title_activity_eliminar_alumnos"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".ModificarAlumnos"
+            android:label="@string/title_activity_modificar_alumnos"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

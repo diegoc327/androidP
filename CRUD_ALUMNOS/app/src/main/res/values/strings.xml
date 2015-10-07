@@ -22,4 +22,7 @@
     <string name="title_activity_activity_mostrar">Activity_mostrar</string>
     <string name="title_activity_frm_consulta">FrmConsulta</string>
     <string name="title_activity_actividad_principal">ActividadPrincipal</string>
+    <string name="title_activity_buscar_alumnos">BuscarAlumnos</string>
+    <string name="title_activity_eliminar_alumnos">EliminarAlumnos</string>
+    <string name="title_activity_modificar_alumnos">ModificarAlumnos</string>
 </resources>
