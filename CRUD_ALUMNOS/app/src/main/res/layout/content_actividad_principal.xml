@@ -32,7 +32,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:id="@+id/imageButton3"
-        android:src="@drawable/amarillo"
+        android:src="@drawable/design_snackbar_background"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false"
@@ -44,7 +44,7 @@
         android:id="@+id/imageButton4"
         android:layout_alignTop="@+id/imageButton3"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/verde" />
+        android:src="@drawable/abc_ic_commit_search_api_mtrl_alpha" />
 
     <TextView
         android:layout_width="wrap_content"
