@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -32,10 +33,14 @@ import android.app.DialogFragment;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 
 public class AgregarAlumnos extends Activity {
 
+
+
+    //Variables
     private Button mDateButton;
     public Calendar mCalendar;
     private static final String DATE_FORMAT = "yyyy-MM-dd";
@@ -55,12 +60,13 @@ public class AgregarAlumnos extends Activity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_alumnos);
 
-
+//Datos de la entidad
         etNombre =(EditText) findViewById(R.id.textNombre);
         etControl =(EditText) findViewById(R.id.textControl);
         etTelefono=(EditText) findViewById(R.id.textTelefono);
@@ -69,6 +75,14 @@ public class AgregarAlumnos extends Activity {
         etCarrera=(Spinner) findViewById(R.id.spinnerCarrera);
         etEmail=(EditText) findViewById(R.id.textEmail);
         etNacimiento=(Button) findViewById(R.id.reminder_date);
+
+
+
+
+
+
+
+
         btnGuardar =(Button) findViewById(R.id.btnGuardar);
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,22 +96,46 @@ public class AgregarAlumnos extends Activity {
                     objEnt.setSexo(etSexo.getSelectedItem().toString());
                     objEnt.setTelefono(Integer.parseInt(etTelefono.getText().toString()));
 
-
                     conAlumno objAlumno =new conAlumno(getBaseContext());
                     objAlumno.insertarAlumno(objEnt);
 
-
                 Intent i = new Intent(getApplicationContext(), FrmConsulta.class);
                 startActivity(i);
-
-
-
-
             }
         });
 
+        if (getIntent().getExtras()!=null) {
+            String[] dato = getIntent().getExtras().getString("Registro").split("-");
+
+            etControl.setText(dato[0]);
+            etNombre.setText(dato[1]);
+            etDireccion.setText(dato[2]);
+            etTelefono.setText((dato[3]));
+            Toast.makeText(this,dato[4],Toast.LENGTH_SHORT).show();
+            String[]c=dato;
+            int index=2;
+            c[0]= ("Ing. Gestión Empresarial");
+            c[1]=("Ing. Sistemas Computacionales");
+            c[2]= ("Ing. Electromecánica");
+            c[3]=("Ing. Tecnologías de la Información y Comunicación");
+            c[4]= ("Arquitectura");
+            c[5]=("Lic. Gastronomía");
+            c[6]=("Lic. Turismo");
+            for (int x=0; x==6;x++){
+            //Toast.makeText((this),"for",Toast.LENGTH_SHORT).show();
+                if(dato[5].equals(c[x])){
+                    etCarrera.setSelection(x);
+                    index=x;
+                    System.out.println("igualdad");
+                    //Toast.makeText(this,"igualdad",Toast.LENGTH_SHORT).show();
+                }
+            }
+            Toast.makeText(this,Integer.toString(index),Toast.LENGTH_SHORT).show();
+
+        }
 
 
+//Botones Calendario
 
         mDateButton = (Button) findViewById(R.id.reminder_date);
         mCalendar = Calendar.getInstance();
@@ -110,14 +148,14 @@ public class AgregarAlumnos extends Activity {
         });
 
 
-
+//Datos de Spinner
         Spinner spinnerSexo = (Spinner) findViewById(R.id.spinnerSexo);
-// Create an ArrayAdapter using the string array and a default spinner layout
+
         ArrayAdapter<CharSequence> adapterSexo = ArrayAdapter.createFromResource(this,
                 R.array.gender_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+
         adapterSexo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+
         spinnerSexo.setAdapter(adapterSexo);
 
         Spinner spinnerCarrera = (Spinner) findViewById(R.id.spinnerCarrera);
@@ -127,18 +165,9 @@ public class AgregarAlumnos extends Activity {
         adapterCarrera.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCarrera.setAdapter(adapterCarrera);
 
-
-
-
-
-
-
-
-
-
-
+//fin onCreate
     }
-
+    //Funciones para el calendario
     public void showDatePickerDialog(View v) {
         dateFragment = new DatePickerFragment();
         dateFragment.show(getFragmentManager(), "datePicker");

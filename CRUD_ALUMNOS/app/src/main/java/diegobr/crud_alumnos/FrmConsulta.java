@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -63,8 +64,10 @@ public class FrmConsulta extends Activity implements AdapterView.OnItemClickList
     @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3){
 
-        //Intent objEditar = new Intent(this, FrmEditar.class);
-        //objEditar.putExtra("registro", ((TextView)arg1).getText());
+        Toast.makeText(this,"Adios",Toast.LENGTH_SHORT).show();
+        Intent objEditar = new Intent(this, AgregarAlumnos.class);
+        objEditar.putExtra("Registro",((TextView)arg1).getText());
+        startActivity(objEditar);
 
         finish();
     }
