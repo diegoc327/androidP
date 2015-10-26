@@ -64,7 +64,7 @@ public class FrmConsulta extends Activity implements AdapterView.OnItemClickList
     @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3){
 
-        Toast.makeText(this,"Adios",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"Adios",Toast.LENGTH_SHORT).show();
         Intent objEditar = new Intent(this, AgregarAlumnos.class);
         objEditar.putExtra("Registro",((TextView)arg1).getText());
         startActivity(objEditar);

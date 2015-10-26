@@ -54,7 +54,7 @@ public class AgregarAlumnos extends Activity {
     private EditText etEmail;
     private Button etNacimiento;
     private Button btnGuardar;
-
+    public int index;
 
 
 
@@ -111,9 +111,9 @@ public class AgregarAlumnos extends Activity {
             etNombre.setText(dato[1]);
             etDireccion.setText(dato[2]);
             etTelefono.setText((dato[3]));
-            Toast.makeText(this,dato[4],Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,dato[5],Toast.LENGTH_SHORT).show();
             String[]c=dato;
-            int index=2;
+            index=2;
             c[0]= ("Ing. Gestión Empresarial");
             c[1]=("Ing. Sistemas Computacionales");
             c[2]= ("Ing. Electromecánica");
@@ -121,7 +121,7 @@ public class AgregarAlumnos extends Activity {
             c[4]= ("Arquitectura");
             c[5]=("Lic. Gastronomía");
             c[6]=("Lic. Turismo");
-            for (int x=0; x==6;x++){
+            for (int x=0; x>6; x++){
             //Toast.makeText((this),"for",Toast.LENGTH_SHORT).show();
                 if(dato[5].equals(c[x])){
                     etCarrera.setSelection(x);
@@ -129,6 +129,7 @@ public class AgregarAlumnos extends Activity {
                     System.out.println("igualdad");
                     //Toast.makeText(this,"igualdad",Toast.LENGTH_SHORT).show();
                 }
+                index=x;
             }
             Toast.makeText(this,Integer.toString(index),Toast.LENGTH_SHORT).show();
 

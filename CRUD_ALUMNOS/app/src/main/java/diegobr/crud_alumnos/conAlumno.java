@@ -33,6 +33,9 @@ public class conAlumno {
             Toast.makeText(context, "Correcto",Toast.LENGTH_LONG).show();
             //Toast.m
         }
+    public void actualizarAlumno(EntidadAlumnos alumnos){
+        //
+    }
 
 }
 
