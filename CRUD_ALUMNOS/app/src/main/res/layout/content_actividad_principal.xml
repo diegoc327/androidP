@@ -13,7 +13,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:id="@+id/btnNuevo"
-        android:src="@drawable/rojo"
+        android:src="@drawable/abc_btn_check_to_on_mtrl_015"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false"
@@ -23,7 +23,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:id="@+id/btnBuscar"
-        android:src="@drawable/rojo"
+        android:src="@drawable/abc_btn_rating_star_off_mtrl_alpha"
         android:layout_alignTop="@+id/btnNuevo"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/btnNuevo" />
@@ -32,7 +32,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:id="@+id/btnModificar"
-        android:src="@drawable/rojo"
+        android:src="@drawable/abc_btn_radio_to_on_mtrl_000"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="false"
@@ -44,13 +44,13 @@
         android:id="@+id/btnEliminar"
         android:layout_alignTop="@+id/btnModificar"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/rojo" />
+        android:src="@drawable/abc_textfield_default_mtrl_alpha" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Alumno"
+        android:text="Nuevo Alumno"
         android:id="@+id/textView3"
         android:layout_marginTop="53dp"
         android:layout_alignTop="@+id/btnNuevo"

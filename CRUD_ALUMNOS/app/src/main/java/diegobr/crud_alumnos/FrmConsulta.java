@@ -47,6 +47,7 @@ public class FrmConsulta extends Activity implements AdapterView.OnItemClickList
                 alumno.setSexo(cur.getString(5));
                 alumno.setCarrera(cur.getString(6));
                 alumno.setNacimiento(cur.getString(7));
+                alumno.setCorreo(cur.getString(8));
 
                 alDatos.add(alumno);
             } while (cur.moveToNext());

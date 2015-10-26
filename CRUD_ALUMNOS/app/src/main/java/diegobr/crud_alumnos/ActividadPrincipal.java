@@ -33,7 +33,7 @@ public class ActividadPrincipal extends AppCompatActivity {
         btnNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), FrmConsulta.class);
+                Intent i = new Intent(getApplicationContext(), AgregarAlumnos.class);
                 startActivity(i);
 
             }

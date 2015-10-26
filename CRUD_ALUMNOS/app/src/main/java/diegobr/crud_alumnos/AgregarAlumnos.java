@@ -95,45 +95,23 @@ public class AgregarAlumnos extends Activity {
                     objEnt.setDireccion(etDireccion.getText().toString());
                     objEnt.setSexo(etSexo.getSelectedItem().toString());
                     objEnt.setTelefono(Integer.parseInt(etTelefono.getText().toString()));
+                    objEnt.setNacimiento(String.valueOf(etNacimiento.getText()));
 
                     conAlumno objAlumno =new conAlumno(getBaseContext());
+
+
+                if (getIntent().getExtras()!=null) {
+                    objAlumno.actualizarAlumno(objEnt);
+                }else{
                     objAlumno.insertarAlumno(objEnt);
+                }
 
                 Intent i = new Intent(getApplicationContext(), FrmConsulta.class);
                 startActivity(i);
             }
         });
 
-        if (getIntent().getExtras()!=null) {
-            String[] dato = getIntent().getExtras().getString("Registro").split("-");
 
-            etControl.setText(dato[0]);
-            etNombre.setText(dato[1]);
-            etDireccion.setText(dato[2]);
-            etTelefono.setText((dato[3]));
-            Toast.makeText(this,dato[5],Toast.LENGTH_SHORT).show();
-            String[]c=dato;
-            index=2;
-            c[0]= ("Ing. Gestión Empresarial");
-            c[1]=("Ing. Sistemas Computacionales");
-            c[2]= ("Ing. Electromecánica");
-            c[3]=("Ing. Tecnologías de la Información y Comunicación");
-            c[4]= ("Arquitectura");
-            c[5]=("Lic. Gastronomía");
-            c[6]=("Lic. Turismo");
-            for (int x=0; x>6; x++){
-            //Toast.makeText((this),"for",Toast.LENGTH_SHORT).show();
-                if(dato[5].equals(c[x])){
-                    etCarrera.setSelection(x);
-                    index=x;
-                    System.out.println("igualdad");
-                    //Toast.makeText(this,"igualdad",Toast.LENGTH_SHORT).show();
-                }
-                index=x;
-            }
-            Toast.makeText(this,Integer.toString(index),Toast.LENGTH_SHORT).show();
-
-        }
 
 
 //Botones Calendario
@@ -165,6 +143,54 @@ public class AgregarAlumnos extends Activity {
                 R.array.career_array, android.R.layout.simple_spinner_item);
         adapterCarrera.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCarrera.setAdapter(adapterCarrera);
+        //fin datos de spinner
+
+
+
+
+        if (getIntent().getExtras()!=null) {
+            String[] dato = getIntent().getExtras().getString("Registro").split("-");
+            etCarrera.setSelection(4);
+            etControl.setText(dato[0]);
+            etNombre.setText(dato[1]);
+            etDireccion.setText(dato[2]);
+            etTelefono.setText((dato[3]));
+            etEmail.setText((dato[9]));
+            etNacimiento.setText(dato[6] + "-" + dato[7] + "-" + dato[8]);
+
+            String[]c=new String[7];
+            index=2;
+            c[0]= ("Ing. Gestión Empresarial");
+            c[1]=("Ing. Sistemas Computacionales");
+            c[2]= ("Ing. Electromecánica");
+            c[3]=("Ing. Tecnologías de la Información y Comunicación");
+            c[4]= ("Arquitectura");
+            c[5]=("Lic. Gastronomía");
+            c[6]=("Lic. Turismo");
+            for (int x=0; x<7; x++){
+                if(dato[5].equals(c[x])){
+                    etCarrera.setSelection(x);
+                    index=x;
+                }
+            }
+            //etCarrera.setSelection(index);
+            String[]d=new String[2];
+            d[0]="Hombre";
+            d[1]="Mujer";
+            for (int y=0;y<2;y++){
+                if(dato[4].equals(d[y])){
+                    etSexo.setSelection(y);
+                }
+            }
+        }//fin if
+
+
+
+
+
+
+
+
 
 //fin onCreate
     }
