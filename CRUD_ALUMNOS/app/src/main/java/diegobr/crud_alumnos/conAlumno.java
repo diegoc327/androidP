@@ -49,16 +49,19 @@ public class conAlumno {
         cv.put(manejoDB.NACIMIENTO,alumno.getNacimiento());
         cv.put(manejoDB.CORREO,alumno.getCorreo());
 
-        db.update("alumno", cv, "numero="+String.valueOf(alumno.getId()),null
+        db.update("alumno", cv, "numero=" + String.valueOf(alumno.getId()), null
         );
 
         db.close();
         Toast.makeText(this.context, "Actualizado correctamente", Toast.LENGTH_LONG).show();
 
-
-
-
         //
+    }
+
+    public void eliminarAlumno(Integer numero){
+        ManejoDatabase manejoDB=new ManejoDatabase(this.context);
+        SQLiteDatabase db=manejoDB.getWritableDatabase();
+        db.delete("alumno", "codigo="+String.valueOf(numero), null);
     }
 
 }

@@ -14,7 +14,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Eliminar alumnos"
+        android:text="Eliminar Alumnos"
+        android:id="@+id/textView10"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ingrese el numero de control"
         android:id="@+id/textView8"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/txtEliminar"
+        android:layout_below="@+id/textView8"
+        android:layout_alignEnd="@+id/textView8"
+        android:layout_alignStart="@+id/textView8" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ELIMINAR"
+        android:id="@+id/btnEliminar"
+        android:layout_below="@+id/txtEliminar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp" />
+
 </RelativeLayout>
